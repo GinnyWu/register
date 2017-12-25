@@ -1,0 +1,76 @@
+    <!DOCTYPE html>  
+    <html>  
+    <head lang="en">  
+        <meta charset="UTF-8">  
+        <link rel="stylesheet" href="style.css">
+        <title></title>  
+    </head>  
+    <body>  
+
+    <nav id="nav">
+    	<a href="#"><img src="img/left_arrow_64px.png"></a>
+    	<a href="#"><p id="return">返回</p></a>
+    </nav>
+
+
+    <section>  
+          <form action="#" method="post" autocomplete="on"> 
+               <header>  
+                <h3 id="register">请正确填写注册信息</h3>  
+              </header>  
+            <div id="main-content"> 
+              <p>姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="text" required name="name" class="text-in" pattern="[\u4e00-\u9fa5]{2,}" oninvalid="validatelt(this,'真实姓名必须是中文，且长度不小于2')"/></label></p>  
+               
+                <p>用户名：&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="text" placeholder="该昵称用于登录" required name="nichen" class="text-in"/></label></p>  
+                
+                <p>登录密码：<label><input type="password" pattern="[A-Za-z0-9]{6,30}" name="password" oninvalid="validatelt(this,'密码长度至少为六位，且不能有中文')" placeholder="请输入密码" class="text-in"/></label></p>  
+                <p>确认密码：<label><input type="password" pattern="[A-Za-z0-9]{6,30}" name="password" oninvalid="validatelt(this,'密码长度至少为六位，且不能有中文')" class="text-in"/></label></p>  
+                <p id="sex">性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>  
+                	
+                    <input type="radio" name="sex" value="man" class="man" />男</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="sex" value="women" class="women"/>女</label>  
+                   
+                </p>  
+                <p>出生日期：<label><input type="date" name="birthday" max="2017" required class="text-in"/></label></p>  
+                <p>电子邮箱：<label><input name="email" type="email" required class="text-in"/></label></p>  
+                <p>联系电话：<label><input name="phone" type="text"  required  pattern="1[34578]\d{9}$"  oninvalid="validatelt(this,'电话号只能是11位的整数')" class="text-in"/></label></p>  
+                
+                <p id="submit"><a href="#"> 提交注册</a></p>
+                 </div> 
+            </form>
+    </section>  
+    <div id="line">
+    </div>
+
+
+    <section id="login">  
+    	<nav>  
+        <span style="color: #333333; font-size: 30px">已有账号?</span></br></br>请登录
+        	<p>用户名: <label><input type="text" name="login_name"  placeholder="用户名/手机/邮箱" required/></label></p>
+        	<p>密码:&nbsp;&nbsp;&nbsp;&nbsp; <label><input type="password" name="password" required/></label></p>  
+        	<button>登陆</button>
+        	<button>忘记密码</button>
+        </nav>  
+        <footer id="login_spe">
+         <a href="#" class="login_log" id="wechat"><img src="img/weixin2.png" width="50px" height="50px"></br>微信登陆</a>
+         <a href="#" class="login_log"><img src="img/qq.png" width="70px" height="70px"></br>QQ登陆</a>
+         <a href="#" class="login_log"><img src="img/sinaweibo.png" width="70px" height="70px"></br>微博登陆</a>
+     </footer>
+    </section>
+    </body>  
+    <script>  
+        //对悬浮窗的设置  
+        function validatelt(inputelement,err){  
+            if(inputelement.validity.patternMismatch){  
+                inputelement.setCustomValidity(err);  
+                //错误后就清空，不过执行顺序有点问题就不要了  
+    //                if(confirm("输入有误,是否清空此项？")){  
+    //                    inputelement.value="";  
+    //                }  
+            }else{  
+                inputelement.setCustomValidity("");  
+                return true;  
+            }  
+        }  
+    </script>  
+    </html>
